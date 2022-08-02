@@ -1,6 +1,6 @@
 {
-    "name": "remove-console",
-    "version": "1.0.0",
+    "name": "babel-remove-console-scope",
+    "version": "1.0.1",
     "description": "babel plugin remove-console",
     "main": "index.js",
     "scripts": {

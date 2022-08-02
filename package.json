@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin",
+  "name": "babel-plugin-cus",
   "version": "1.0.0",
   "description": "babel plugin monorepo contain remove-console parseTemplateI18",
   "scripts": {
