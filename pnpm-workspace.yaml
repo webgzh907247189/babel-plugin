@@ -1,0 +1,4 @@
+packages:
+  - 'packages/*'
+
+# enable-pre-post-scripts 开启pre 和 post 脚本一起执行 

@@ -1,0 +1,32 @@
+{
+  "name": "babel-plugin",
+  "version": "1.0.0",
+  "description": "babel plugin monorepo contain remove-console parseTemplateI18",
+  "scripts": {
+    "lint-fix": "eslint packages --ext .js --fix",
+    "prettier": "npx prettier --write packages/**/*.js",
+    "prepare": "husky install",
+    "coverage": "pnpm run test -r",
+    "checkCovered": "node ./coverageUtil/checkCovered.js",
+    "prepublishOnly": "npm run coverage && npm run checkCovered"
+  },
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,vue}": [
+      "npm run prettier",
+      "npm run lint-fix"
+    ]
+  },
+  "devDependencies": {
+    "domutils": "^3.0.1",
+    "eslint": "^8.21.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "remove-console",
+    "version": "1.0.0",
+    "description": "babel plugin remove-console",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "coverage": "jest --coverage"
+    },
+    "keywords": [
+        "babel",
+        "plugin",
+        "remove",
+        "console",
+        "exclude",
+        "container"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "^7.18.10",
+        "cus-utils": "^1.0.5"
+    }
+}
