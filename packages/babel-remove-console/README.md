@@ -15,7 +15,7 @@ module.exports = {
 
 ## Example
 
-### In
+### case1 In
 
 ```javascript
 const babelRemoveConsole = require('babel-remove-console');
@@ -49,7 +49,9 @@ const getList = () => {
 console.error(s, '??', 'notremove');
 ```
 
-### In
+
+
+### case2 In
 
 ```javascript
 const babelRemoveConsole = require('babel-remove-console');
@@ -79,7 +81,8 @@ console.log(s, '??', 'notremove11');
 console.error(s, '??', 'notremove');
 ```
 
-### In
+
+### case3 In
 
 ```javascript
 const babelRemoveConsole = require('babel-remove-console');
@@ -103,7 +106,9 @@ let s = 1;
 console('??', 'notremove');
 ```
 
-### In
+
+
+### case4 In
 
 ```javascript
 const babelRemoveConsole = require('babel-remove-console');
@@ -129,7 +134,7 @@ console('??', 'notremove');
 console.log(s, '??', 'notremove11');
 ```
 
-### In
+### case5 In
 
 ```javascript
 const babelRemoveConsole = require('babel-remove-console');
