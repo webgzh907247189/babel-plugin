@@ -6,9 +6,10 @@
     "lint-fix": "eslint packages --ext .js --fix",
     "prettier": "npx prettier --write packages/**/*.js",
     "prepare": "husky install",
-    "coverage": "pnpm run test -r",
+    "testAll": "pnpm run test -r",
+    "coverageAll": "pnpm run coverage -r",
     "checkCovered": "node ./coverageUtil/checkCovered.js",
-    "prepublishOnly": "npm run coverage && npm run checkCovered"
+    "prepublishOnly": "npm run coverageAll && npm run checkCovered"
   },
   "author": "",
   "license": "ISC",
@@ -19,7 +20,6 @@
     ]
   },
   "devDependencies": {
-    "domutils": "^3.0.1",
     "eslint": "^8.21.0",
     "husky": "^8.0.1",
     "jest": "^28.1.3",
