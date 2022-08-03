@@ -1,6 +1,6 @@
 {
     "name": "babel-plugin-remove-console-retain",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "babel plugin remove-console-retain",
     "main": "index.js",
     "scripts": {
@@ -17,7 +17,7 @@
         "retain"
     ],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "@babel/core": "^7.18.10",
         "cus-utils": "^1.0.5"

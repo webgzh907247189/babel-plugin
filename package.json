@@ -12,7 +12,7 @@
     "prepublishOnly": "npm run coverageAll && npm run checkCovered"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "lint-staged": {
     "src/**/*.{js,ts,tsx,vue}": [
       "npm run prettier",
