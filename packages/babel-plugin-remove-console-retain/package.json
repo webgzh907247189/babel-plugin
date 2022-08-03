@@ -1,5 +1,5 @@
 {
-    "name": "babel-remove-console-retain",
+    "name": "babel-plugin-remove-console-retain",
     "version": "1.0.3",
     "description": "babel plugin remove-console-retain",
     "main": "index.js",

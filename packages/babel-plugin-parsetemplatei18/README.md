@@ -1,17 +1,17 @@
-## parseTemplatei18 
+## babel-plugin-parsetemplatei18 
 ### 行覆盖率、函数覆盖率、分支覆盖率、语句覆盖率居均达到 100%
 ### https://juejin.cn/post/7121954521127288868
 
 ### Installation  
-`npm i parsetemplatei18`
+`npm i babel-plugin-parsetemplatei18`
 
 ## Demo
 
 ```javascript
-const parseTemplatei18 = require('parseTemplatei18');
+const babelPluginParsetemplatei18 = require('babel-plugin-parsetemplatei18');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[parseTemplatei18, { calleeSourceCode: '_vm.providerI18n.t', calleeTargetCode: 'providerI18n' }]],
+    plugins: [[babelPluginParsetemplatei18, { calleeSourceCode: '_vm.providerI18n.t', calleeTargetCode: 'providerI18n' }]],
 };
 ```
 

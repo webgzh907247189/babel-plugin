@@ -6,16 +6,16 @@
  2. 通过 contain 包含一些不需要移除的 console.XX (带 contain 里面的关键字的 console.xx 就不会被移除)
 
 ### Installation  
-`npm i babel-remove-console-retain`
+`npm i babel-plugin-remove-console-retain`
 
 
 ## Demo
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-plugin-remove-console-retain');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain, { exclude: ['log'], contain: ['node remove'] }]],
+    plugins: [[babelPluginRemoveConsoleRetain, { exclude: ['log'], contain: ['node remove'] }]],
 };
 ```
 
@@ -24,10 +24,10 @@ module.exports = {
 ### case1 In
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-remove-console');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain, { exclude: ['log'], contain: ['notremove'] }]],
+    plugins: [[babelPluginRemoveConsoleRetain, { exclude: ['log'], contain: ['notremove'] }]],
 };
 
 let s = 1; 
@@ -60,10 +60,10 @@ console.error(s, 'test', 'notremove');
 ### case2 In
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-remove-console');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain, { exclude: ['log'], contain: ['notremove'] }]],
+    plugins: [[babelPluginRemoveConsoleRetain, { exclude: ['log'], contain: ['notremove'] }]],
 };
 
 let s = 1; 
@@ -90,10 +90,10 @@ console.log(s, 'test', 'notremove--test');
 ### case3 In
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-remove-console');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain]],
+    plugins: [[babelPluginRemoveConsoleRetain]],
 };
 
 let s = 1; 
@@ -116,10 +116,10 @@ console('test', 'notremove');;
 ### case4 In
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-remove-console');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain, { exclude: ['log'] }]],
+    plugins: [[babelPluginRemoveConsoleRetain, { exclude: ['log'] }]],
 };
 
 let s = 1; 
@@ -142,10 +142,10 @@ console.log(s, 'test', 'notremove--test');
 ### case5 In
 
 ```javascript
-const babelRemoveConsoleRetain = require('babel-remove-console');
+const babelPluginRemoveConsoleRetain = require('babel-remove-console');
 module.exports = {
     presets: ['@babel/preset-env'],
-    plugins: [[babelRemoveConsoleRetain, { contain: [1] }]],
+    plugins: [[babelPluginRemoveConsoleRetain, { contain: [1] }]],
 };
 
 let s = 1; 
