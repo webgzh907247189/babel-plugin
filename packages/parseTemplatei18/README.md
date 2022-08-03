@@ -1,5 +1,5 @@
-## parseTemplatei18 (行覆盖率、函数覆盖率、分支覆盖率、语句覆盖率居均达到 100%)
-
+## parseTemplatei18 
+### 行覆盖率、函数覆盖率、分支覆盖率、语句覆盖率居均达到 100%
 ### https://juejin.cn/post/7121954521127288868
 
 ## Demo
@@ -58,6 +58,7 @@ new webpack.ProvidePlugin({
 **Compile Vue template Out**
 
 ```javascript
-// 不包含_vm.providerI18n.t('xx'), 变为 providerI18n.t('xx')
+// 不使用 parseTemplatei18 插件, 编译的结果为 _vm.providerI18n.t('xx')
+// 使用 parseTemplatei18插件, 结果被替换为 providerI18n.t('xx')
 providerI18n.t('xx');
 ```
