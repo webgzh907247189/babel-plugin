@@ -1,9 +1,9 @@
 const babelCore = require("@babel/core");
-const removeConsole = require("../index.js");
+const removeConsoleRetain = require("../index.js");
 
 // options -> { contain: [''], exclude: [''] }
 const getBabelCoreTransformCode = (code, options) => {
-	const plugins = options ? [ [removeConsole, options]] : [removeConsole];
+	const plugins = options ? [ [removeConsoleRetain, options]] : [removeConsoleRetain];
 	const transformAst = babelCore.transformSync(code, {
 		plugins
 	});
