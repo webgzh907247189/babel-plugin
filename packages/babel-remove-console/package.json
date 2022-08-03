@@ -1,6 +1,6 @@
 {
     "name": "babel-remove-console-retain",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "babel plugin remove-console",
     "main": "index.js",
     "scripts": {
