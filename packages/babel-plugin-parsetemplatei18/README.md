@@ -65,3 +65,6 @@ new webpack.ProvidePlugin({
 // 使用 parseTemplatei18插件, 结果被替换为 providerI18n.t('xx')
 providerI18n.t('xx');
 ```
+
+## License
+[MIT]

@@ -166,3 +166,6 @@ console.log(s, 'test', 'notremove');
 console('test', 'notremove');
 console.log(s, 'test', 'notremove--test');
 ```
+
+## License
+[MIT]
