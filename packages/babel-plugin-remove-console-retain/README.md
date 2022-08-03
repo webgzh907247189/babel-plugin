@@ -3,7 +3,7 @@
 ### 行覆盖率、函数覆盖率、分支覆盖率、语句覆盖率居均达到 100%
 ### 移除 项目中的 conosle
  1. 通过 exclude 排除一些不需要移除的 conosle.xx (选择保留一些 conosle)
- 2. 通过 contain 包含一些不需要移除的 console.XX (带 contain 里面的关键字的 console.xx 就不会被移除)
+ 2. 通过 contain 包含一些不需要移除的 console.xx (带 contain 里面的关键字的 console.xx 就不会被移除)
 
 ### Installation  
 `npm i babel-plugin-remove-console-retain`
