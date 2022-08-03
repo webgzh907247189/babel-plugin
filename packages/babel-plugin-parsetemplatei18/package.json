@@ -1,6 +1,6 @@
 {
     "name": "babel-plugin-parsetemplatei18",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "babel plugin parsetemplatei18",
     "main": "index.js",
     "scripts": {
