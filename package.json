@@ -11,6 +11,14 @@
     "checkCovered": "node ./coverageUtil/checkCovered.js",
     "prepublishOnly": "npm run coverageAll && npm run checkCovered"
   },
+  "homepage": "https://github.com/webgzh907247189/babel-plugin#readme",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+  },
+  "bugs": {
+      "url": "https://github.com/webgzh907247189/babel-plugin/issues"
+  },
   "author": "",
   "license": "MIT",
   "lint-staged": {
