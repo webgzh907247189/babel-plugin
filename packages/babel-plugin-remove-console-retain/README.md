@@ -1,4 +1,4 @@
-## babel-plugin-remove-conosle-retain
+## babel-plugin-remove-console-retain
 
 ### 行覆盖率、函数覆盖率、分支覆盖率、语句覆盖率居均达到 100%
 ### 移除 项目中的 conosle
