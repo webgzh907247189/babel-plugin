@@ -22,7 +22,7 @@
   "author": "",
   "license": "MIT",
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,vue}": [
+    "packages/**/*.{js,ts,tsx,vue}": [
       "npm run prettier",
       "npm run lint-fix"
     ]
