@@ -7,7 +7,7 @@ const getBabelCoreTransformCode = (code) => {
 			[parseTemplatei18, { calleeSourceCode: "_vm.providerI18n.t", calleeTargetCode: "providerI18n" }]
 		]
 	});
-	return transformAst.code
+	return transformAst.code;
 };
 
 describe("parseTemplatei18-plugin", () => {

@@ -1,7 +1,7 @@
 module.exports = {
     printWidth: 100000,
     tabWidth: 4,
-    useTabs: false,
+    useTabs: true,
     semi: true,
     quoteProps: 'as-needed',
     bracketSpacing: true,
@@ -16,5 +16,5 @@ module.exports = {
     endOfLine: 'auto',
     rangeStart: 0,
     vueIndentScriptAndStyle: false,
-    singleQuote: true,
+    singleQuote: false,
 };
