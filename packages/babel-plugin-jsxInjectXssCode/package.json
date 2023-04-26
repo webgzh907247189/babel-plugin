@@ -6,6 +6,14 @@
   "directories": {
     "lib": "lib"
   },
+  "homepage": "https://github.com/webgzh907247189/babel-plugin/tree/master/packages/babel-plugin-parsetemplatei18#readme",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+  },
+  "bugs": {
+      "url": "https://github.com/webgzh907247189/babel-plugin/issues"
+  },
   "keywords": [
     "babel",
     "react",
