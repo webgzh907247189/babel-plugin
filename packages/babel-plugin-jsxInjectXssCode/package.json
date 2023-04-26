@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-react-injectxsscode",
+  "version": "1.0.0",
+  "description": "babel plugin react injectXssCode",
+  "private": false,
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "babel",
+    "react",
+    "plugin",
+    "injectXssCode",
+    "injectCode",
+    "ast",
+    "compiler inject"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.21.4"
+  }
+}

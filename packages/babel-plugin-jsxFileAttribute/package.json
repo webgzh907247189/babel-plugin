@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-jsxfileattribute",
+  "version": "1.0.2",
+  "description": "babel plugin react jsxfileattribute",
+  "private": false,
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "jsxfileattribute",
+    "source",
+    "file",
+    "conmponent message"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "@bit/tsconfig": "*"
+  }
+}
