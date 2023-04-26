@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsxfileattribute",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "babel plugin react jsxfileattribute",
   "private": false,
   "directories": {
@@ -14,7 +14,7 @@
     "file",
     "conmponent message"
   ],
-  "homepage": "https://github.com/webgzh907247189/babel-plugin/tree/master/packages/babel-plugin-parsetemplatei18#readme",
+  "homepage": "https://github.com/webgzh907247189/babel-plugin/blob/master/packages/babel-plugin-jsxFileAttribute/README.md",
   "repository": {
       "type": "git",
       "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
