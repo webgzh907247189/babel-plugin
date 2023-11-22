@@ -12,6 +12,7 @@ const babelPluginJsxFileAttribute = require('babel-plugin-jsxfileattribute');
 // babel.config.js
 // 只在dev 环境使用
 // 各业务团队根据 process.env.NODE_ENV 作出判断
+// 默认针对 React.Fragment 标签进行了处理
 module.exports = {
     ...
     plugins: [
