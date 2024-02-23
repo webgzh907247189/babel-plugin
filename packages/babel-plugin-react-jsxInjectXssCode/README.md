@@ -14,6 +14,9 @@ module.exports = {
     ...
     plugins: [
         ...
+        // packageName 是 编译之后 倒入的 npm 包名字
+        // composeXssFn 是 packageName这个 npm包导出的函数
+        // 从 [packageName] 导出 [composeXssFn] 函数给 dangerouslySetInnerHTML 使用
         [babelPluginReactInjectXssCode, { packageName: 'utils', injectFnName: 'composeXssFn' }]
     ]
 }
