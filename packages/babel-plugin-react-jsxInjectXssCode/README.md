@@ -1,20 +1,20 @@
-# babel-plugin-injectxsscode
+# babel-plugin-react-injectxsscode
 
 ### Installation
 
-`npm i babel-plugin-injectxsscode`
+`npm i babel-plugin-react-injectxsscode`
 
 ## Usage
 
 ```javascript
-const babelPluginInjectXssCode = require('babel-plugin-injectxsscode');
+const babelPluginReactInjectXssCode = require('babel-plugin-react-injectxsscode');
 
 // babel.config.js
 module.exports = {
     ...
     plugins: [
         ...
-        [babelPluginInjectXssCode, { packageName: 'utils', injectFnName: 'composeXssFn' }]
+        [babelPluginReactInjectXssCode, { packageName: 'utils', injectFnName: 'composeXssFn' }]
     ]
 }
 ```
