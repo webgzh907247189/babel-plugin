@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-injectxsscode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "babel plugin react injectXssCode",
   "private": false,
   "directories": {
