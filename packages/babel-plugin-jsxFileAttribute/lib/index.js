@@ -21,7 +21,7 @@ module.exports = ({ types }, options) => {
 				}
 
 				// 当前 pwd  默认 src
-				const cwd = state.file?.opts?.cwd || "src";
+				const cwd = options.userSetPwd ? options.userSetPwd : (state.file?.opts?.cwd || "src");
 
 				// 可能出现 /a/b/src/c/d/src/e/src 情况
 				// eslint-disable-next-line no-unsafe-optional-chaining
