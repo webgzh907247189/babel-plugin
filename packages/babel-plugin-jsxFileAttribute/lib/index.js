@@ -36,13 +36,13 @@ module.exports = ({ types }, options) => {
 
 				// 渲染的文件
 				const newPropRenderFileName = types.jSXAttribute(
-					types.jSXIdentifier("render-file-name"),
+					types.jSXIdentifier("data-render-file-name"),
 					types.stringLiteral(fileName ?? "")
 				);
 
 				// 当前的 行
 				const newPropComponentLine = types.jSXAttribute(
-					types.jSXIdentifier("line"),
+					types.jSXIdentifier("data-line"),
 					types.stringLiteral(String(comLine) ?? "")
 				);
 
