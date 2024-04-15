@@ -1,12 +1,22 @@
 const defaultExclude = new Set(["Fragment"]);
 let exclude = defaultExclude;
 
+let isShowAwakeIdeMsg = true;
+let onlyShowAwakeIdeMsg = true;
+
 module.exports = ({ types }, options) => {
 	if (options.exclude) {
 		const userExclude = Array.isArray(options.exclude)
 			? options.exclude
 			: [options.exclude];
 		exclude = new Set([...userExclude, ...defaultExclude]);
+	}
+
+	if(options.isShowAwakeIdeMsg){
+		isShowAwakeIdeMsg = !!options.isShowAwakeIdeMsg;
+	}
+	if(options.onlyShowAwakeIdeMsg){
+		onlyShowAwakeIdeMsg = !!options.onlyShowAwakeIdeMsg;
 	}
 
 	return {
@@ -33,23 +43,36 @@ module.exports = ({ types }, options) => {
 
 				const comLine =
 					astPath?.get?.("loc")?.get?.("start")?.get?.("line")?.node ?? "";
+				const comColumn =
+					astPath?.get?.("loc")?.get?.("start")?.get?.("column")?.node ?? "";
 
-				// 渲染的文件
-				const newPropRenderFileName = types.jSXAttribute(
-					types.jSXIdentifier("data-render-file-name"),
-					types.stringLiteral(fileName ?? "")
-				);
+				let newPropRenderFileName = ''
+				let newPropComponentLine = ''
 
-				// 当前的 行
-				const newPropComponentLine = types.jSXAttribute(
-					types.jSXIdentifier("data-line"),
-					types.stringLiteral(String(comLine) ?? "")
-				);
+				if(!onlyShowAwakeIdeMsg){
+					// 渲染的文件
+					newPropRenderFileName = types.jSXAttribute(
+						types.jSXIdentifier("data-render-file-name"),
+						types.stringLiteral(fileName ?? "")
+					);
 
-				astPath.node.attributes.unshift(
-					newPropRenderFileName,
-					newPropComponentLine
-				);
+					// 当前的 行
+					newPropComponentLine = types.jSXAttribute(
+						types.jSXIdentifier("data-line"),
+						types.stringLiteral(String(comLine) ?? "")
+					);
+				}
+				let showAwakeIdeMsg = ''
+				
+				if(isShowAwakeIdeMsg){
+					showAwakeIdeMsg = types.jSXAttribute(
+						types.jSXIdentifier("data-awakeIde"),
+						types.stringLiteral(String(`${fileName}:${comLine}:${comColumn}`) ?? "")
+					);
+				}
+
+				const insertList = [showAwakeIdeMsg, newPropRenderFileName, newPropComponentLine].filter(_ => _ !== '')
+				astPath.node.attributes.unshift(...insertList);
 			},
 		},
 	};
