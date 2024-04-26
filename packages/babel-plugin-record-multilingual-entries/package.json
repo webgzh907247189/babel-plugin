@@ -1,0 +1,41 @@
+{
+  "name": "babel-plugin-record-multilingual-entries",
+  "version": "1.0.0",
+  "description": "babel plugin vue2 multilingual entries",
+  "private": false,
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "vue2",
+    "multilingual",
+    "entries",
+    "vue2 多语言词条提取",
+    "多语言词条提取",
+    "vue2 词条提取"
+  ],
+  "homepage": "https://github.com/webgzh907247189/babel-plugin/blob/master/packages/babel-plugin-record-multilingual-entries/README.md",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+  },
+  "bugs": {
+      "url": "https://github.com/webgzh907247189/babel-plugin/issues"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "@bit/tsconfig": "*"
+  }
+}
