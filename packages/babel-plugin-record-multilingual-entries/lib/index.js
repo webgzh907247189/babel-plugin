@@ -7,13 +7,11 @@ const getStreamDataWrapper = () => {
     let streamData;
     return (options) => {
         if(!streamData){
-            console.log('create');
             streamData = fs.createWriteStream(options.writerPath,{
                   flags:'a'
             });
             return streamData;
         }
-        console.log('no-create');
         
         return streamData;
     } 
