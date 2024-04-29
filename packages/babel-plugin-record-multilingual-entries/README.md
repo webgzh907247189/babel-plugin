@@ -22,7 +22,8 @@ module.exports = {
                 checkFileObj: {},
 
                 // 结果集
-                resultList: []
+                resultList: [],
+                writerPath: '', // path 此配置可帮助用户在编译阶段 一边编译一边写多语言词条，通过流的方式
             }
         ]]
     ]
