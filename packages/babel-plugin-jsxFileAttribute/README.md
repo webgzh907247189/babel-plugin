@@ -21,8 +21,8 @@ const babelPluginJsxFileAttribute = require('babel-plugin-jsxfileattribute');
 
 // data-render-file-name 表示 当前 DOM 所在的组件 file 位置信息
 // data-line 表示 当前 DOM 所在的组件 具体哪一行
-// data-awakeIde 表示 当前渲染的 DOM 所在的组件 具体某一个文件的 某一行 某一列
-// onlyShowAwakeIdeMsg 传入 true，注入在 DOM 里 只会存在 data-awakeIde 信息，data-render-file-name、data-line 均不展示
+// data-awakeide 表示 当前渲染的 DOM 所在的组件 具体某一个文件的 某一行 某一列
+// onlyShowAwakeIdeMsg 传入 true，注入在 DOM 里 只会存在 data-awakeide 信息，data-render-file-name、data-line 均不展示
 module.exports = {
     ...
     plugins: [
@@ -45,8 +45,8 @@ module.exports = {
 ### Out
 1. data-render-file-name 表示 当前 DOM 所在的组件 file 位置信息
 2. data-line 表示 当前 DOM 所在的组件 具体哪一行
-2. data-awakeIde 表示 当前渲染的 DOM 所在的组件 具体某一个文件的 某一行 某一列
-4. onlyShowAwakeIdeMsg 传入 true，注入在 DOM 里 只会存在 data-awakeIde 信息，data-render-file-name、data-line 均不展示
+2. data-awakeide 表示 当前渲染的 DOM 所在的组件 具体某一个文件的 某一行 某一列
+4. onlyShowAwakeIdeMsg 传入 true，注入在 DOM 里 只会存在 data-awakeide 信息，data-render-file-name、data-line 均不展示
 ```javascript
 <Demo data-render-file-name="src/demo/index.jsx" data-line="xx"/>
 ```

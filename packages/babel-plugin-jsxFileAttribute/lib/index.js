@@ -66,7 +66,7 @@ module.exports = ({ types }, options) => {
 				
 				if(isShowAwakeIdeMsg){
 					showAwakeIdeMsg = types.jSXAttribute(
-						types.jSXIdentifier("data-awakeIde"),
+						types.jSXIdentifier("data-awakeide"),
 						types.stringLiteral(String(`${fileName}:${comLine}:${comColumn}`) ?? "")
 					);
 				}
