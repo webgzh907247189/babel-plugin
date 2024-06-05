@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-record-multilingual-entries",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "babel plugin vue2 multilingual entries",
   "private": false,
   "directories": {
@@ -35,7 +35,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-syntax-jsx": "^7.21.4",
-    "@bit/tsconfig": "*"
+    "@babel/plugin-syntax-jsx": "^7.21.4"
   }
 }

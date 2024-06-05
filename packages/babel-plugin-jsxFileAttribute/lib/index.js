@@ -1,9 +1,13 @@
+const cusUtis = require('cus-utils')
+
 const defaultExclude = new Set(["Fragment"]);
 let exclude = defaultExclude;
 
 let isShowAwakeIdeMsg = true;
 let onlyShowAwakeIdeMsg = true;
 let showCompleteFilePath = false;
+
+const isBoolean = cusUtis.getTypeFn('Boolean')
 
 module.exports = ({ types }, options) => {
 	if (options.exclude) {
@@ -13,13 +17,14 @@ module.exports = ({ types }, options) => {
 		exclude = new Set([...userExclude, ...defaultExclude]);
 	}
 
-	if(options.isShowAwakeIdeMsg){
+	if(isBoolean(options.isShowAwakeIdeMsg)){
 		isShowAwakeIdeMsg = !!options.isShowAwakeIdeMsg;
+		
 	}
-	if(options.onlyShowAwakeIdeMsg){
+	if(isBoolean(options.onlyShowAwakeIdeMsg)){
 		onlyShowAwakeIdeMsg = !!options.onlyShowAwakeIdeMsg;
 	}
-	if(options.showCompleteFilePath){
+	if(isBoolean(options.showCompleteFilePath)){
 		showCompleteFilePath = !!options.showCompleteFilePath;
 	}
 
@@ -68,7 +73,7 @@ module.exports = ({ types }, options) => {
 						types.stringLiteral(String(comLine) ?? "")
 					);
 				}
-				let showAwakeIdeMsg = ''
+				let showAwakeIdeMsg = ''	
 				
 				if(isShowAwakeIdeMsg){
 					showAwakeIdeMsg = types.jSXAttribute(
@@ -84,7 +89,7 @@ module.exports = ({ types }, options) => {
 					);
 				}
 
-				const insertList = [showAwakeIdeMsg, newPropRenderFileName, newPropComponentLine, showCompleteFilePath].filter(_ => _ !== '')
+				const insertList = [showAwakeIdeMsg, newPropRenderFileName, newPropComponentLine, newPropComponentCompleteLine].filter(_ => _ !== '')
 				astPath.node.attributes.unshift(...insertList);
 			},
 		},

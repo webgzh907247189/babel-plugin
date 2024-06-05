@@ -13,11 +13,11 @@
   },
   "homepage": "https://github.com/webgzh907247189/babel-plugin#readme",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+    "type": "git",
+    "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
   },
   "bugs": {
-      "url": "https://github.com/webgzh907247189/babel-plugin/issues"
+    "url": "https://github.com/webgzh907247189/babel-plugin/issues"
   },
   "author": "",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "cus-utils": "^1.0.12"
   }
 }
