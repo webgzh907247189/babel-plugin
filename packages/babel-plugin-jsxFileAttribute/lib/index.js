@@ -3,7 +3,7 @@ let exclude = defaultExclude;
 
 let isShowAwakeIdeMsg = true;
 let onlyShowAwakeIdeMsg = true;
-let showCompleteFilePath = true;
+let showCompleteFilePath = false;
 
 module.exports = ({ types }, options) => {
 	if (options.exclude) {
