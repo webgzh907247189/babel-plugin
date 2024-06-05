@@ -3,6 +3,7 @@ let exclude = defaultExclude;
 
 let isShowAwakeIdeMsg = true;
 let onlyShowAwakeIdeMsg = true;
+let showCompleteFilePath = true;
 
 module.exports = ({ types }, options) => {
 	if (options.exclude) {
@@ -18,6 +19,10 @@ module.exports = ({ types }, options) => {
 	if(options.onlyShowAwakeIdeMsg){
 		onlyShowAwakeIdeMsg = !!options.onlyShowAwakeIdeMsg;
 	}
+	if(options.showCompleteFilePath){
+		showCompleteFilePath = !!options.showCompleteFilePath;
+	}
+
 
 	return {
 		visitor: {
@@ -48,6 +53,7 @@ module.exports = ({ types }, options) => {
 
 				let newPropRenderFileName = ''
 				let newPropComponentLine = ''
+				let newPropComponentCompleteLine = ''
 
 				if(!onlyShowAwakeIdeMsg){
 					// 渲染的文件
@@ -70,8 +76,15 @@ module.exports = ({ types }, options) => {
 						types.stringLiteral(String(`${fileName}:${comLine}:${comColumn}`) ?? "")
 					);
 				}
+				if(showCompleteFilePath){
+					const completeFilename = state.file?.opts?.filename
+					newPropComponentCompleteLine = types.jSXAttribute(
+						types.jSXIdentifier("complete-filepath"),
+						types.stringLiteral(String(`${completeFilename}:${comLine}:${comColumn}`) ?? "")
+					);
+				}
 
-				const insertList = [showAwakeIdeMsg, newPropRenderFileName, newPropComponentLine].filter(_ => _ !== '')
+				const insertList = [showAwakeIdeMsg, newPropRenderFileName, newPropComponentLine, showCompleteFilePath].filter(_ => _ !== '')
 				astPath.node.attributes.unshift(...insertList);
 			},
 		},
