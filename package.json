@@ -1,41 +1,46 @@
 {
-  "name": "babel-plugin-cus",
-  "version": "1.0.0",
-  "description": "babel plugin monorepo contain remove-console parseTemplateI18",
-  "scripts": {
-    "lint-fix": "eslint packages --ext .js --fix",
-    "prettier": "npx prettier --write packages/**/*.js",
-    "prepare": "husky install",
-    "testAll": "pnpm run test -r",
-    "coverageAll": "pnpm run coverage -r",
-    "checkCovered": "node ./coverageUtil/checkCovered.js",
-    "prepublishOnly": "npm run coverageAll && npm run checkCovered"
-  },
-  "homepage": "https://github.com/webgzh907247189/babel-plugin#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/webgzh907247189/babel-plugin/issues"
-  },
-  "author": "",
-  "license": "MIT",
-  "lint-staged": {
-    "packages/**/*.{js,ts,tsx,vue}": [
-      "npm run prettier",
-      "npm run lint-fix"
-    ]
-  },
-  "devDependencies": {
-    "eslint": "^8.21.0",
-    "husky": "^8.0.1",
-    "jest": "^28.1.3",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "cus-utils": "^1.0.12"
-  }
+	"name": "babel-plugin-cus",
+	"version": "1.0.0",
+	"description": "babel plugin monorepo contain remove-console parseTemplateI18",
+	"scripts": {
+		"lint-fix": "eslint packages --ext .js --fix",
+		"prettier": "npx prettier --write packages/*/**/*.js",
+		"preinstall": "npx limit-package-install pnpm",
+		"prepare": "husky install",
+		"testAll": "pnpm run test -r",
+		"coverageAll": "pnpm run coverage -r",
+		"checkCovered": "node ./coverageUtil/checkCovered.js",
+		"prepublishOnly": "npm run coverageAll && npm run checkCovered",
+		"changeset": "changeset && npm run version-packages",
+		"version-packages": "changeset version",
+		"publish": "changeset publish -r"
+	},
+	"homepage": "https://github.com/webgzh907247189/babel-plugin#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/webgzh907247189/babel-plugin/issues"
+	},
+	"author": "",
+	"license": "MIT",
+	"lint-staged": {
+		"packages/**/*.{js,ts,tsx,vue}": [
+			"npm run prettier",
+			"npm run lint-fix"
+		]
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.27.5",
+		"eslint": "^8.21.0",
+		"husky": "^8.0.1",
+		"jest": "^28.1.3",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1"
+	},
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.12",
+		"cus-utils": "^1.0.12"
+	}
 }

@@ -3,9 +3,7 @@ const parseTemplatei18 = require("../index");
 
 const getBabelCoreTransformCode = (code) => {
 	const transformAst = babelCore.transformSync(code, {
-		plugins: [
-			[parseTemplatei18, { calleeSourceCode: "_vm.providerI18n.t", calleeTargetCode: "providerI18n" }]
-		]
+		plugins: [[parseTemplatei18, { calleeSourceCode: "_vm.providerI18n.t", calleeTargetCode: "providerI18n" }]],
 	});
 	return transformAst.code;
 };
@@ -34,8 +32,6 @@ describe("parseTemplatei18-plugin", () => {
             providerI18n.t();
         `;
 
-		expect(
-			getBabelCoreTransformCode(sourceCode)
-		).toBe(getBabelCoreTransformCode(expected));
-	});    
+		expect(getBabelCoreTransformCode(sourceCode)).toBe(getBabelCoreTransformCode(expected));
+	});
 });
