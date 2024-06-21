@@ -5,6 +5,7 @@
 `npm i babel-plugin-jsxfileattribute`
 
 ## Usage
+### 参考文章 (https://juejin.cn/post/7382891974942244890 https://juejin.cn/post/7382897150046830630)
 
 ```javascript
 const babelPluginJsxFileAttribute = require('babel-plugin-jsxfileattribute');
