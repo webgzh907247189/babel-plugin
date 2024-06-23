@@ -51,6 +51,7 @@ module.exports = {
 2. data-line 表示 当前 DOM 所在的组件 具体哪一行
 2. data-awakeide 表示 当前渲染的 DOM 所在的组件 具体某一个文件的 某一行 某一列
 4. onlyShowAwakeIdeMsg 传入 true，注入在 DOM 里 只会存在 data-awakeide 信息，data-render-file-name、data-line 均不展示
+5. showCompleteFilePath 默认是false， 展示完整的 file path， showCompleteFilePath 优先级最高
 ```javascript
 <Demo data-render-file-name="src/demo/index.jsx" data-line="xx"/>
 ```
