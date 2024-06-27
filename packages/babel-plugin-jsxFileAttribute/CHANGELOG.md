@@ -1,5 +1,11 @@
 # babel-plugin-jsxfileattribute
 
+## 1.1.5
+
+### Patch Changes
+
+-   add React.Fragment to defaultExclude
+
 ## 1.1.4
 
 ### Patch Changes

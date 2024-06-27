@@ -15,11 +15,12 @@ const babelPluginJsxFileAttribute = require('babel-plugin-jsxfileattribute');
 // 各业务团队根据 process.env.NODE_ENV 作出判断
 // 默认针对 React.Fragment 标签进行了处理
 
-// options 配置 -> { isShowAwakeIdeMsg: true, onlyShowAwakeIdeMsg: true,showCompleteFilePath: true }
+// options 配置 -> { isShowAwakeIdeMsg: true, onlyShowAwakeIdeMsg: true,showCompleteFilePath: true, exclude: ["Fragment", "React.Fragment"]  }
 // 针对 monorepo 项目处理了 userSetPwd，用于切割 文件信息
 // isShowAwakeIdeMsg 默认是true， 用户传入的 isShowAwakeIdeMsg 可以覆盖默认的 true
 // onlyShowAwakeIdeMsg 默认是true， 控制展示在 DOM 里面的信息
 // showCompleteFilePath 默认是false， 展示完整的 file path
+// exclude 默认是 ["Fragment", "React.Fragment"]， 表示哪些 react 元素不需要经过 babel-plugin-jsxfileattribute 处理
 
 // data-render-file-name 表示 当前 DOM 所在的组件 file 位置信息
 // data-line 表示 当前 DOM 所在的组件 具体哪一行
