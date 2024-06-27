@@ -1,6 +1,6 @@
 const cusUtis = require("cus-utils");
 
-const defaultExclude = new Set(["Fragment"]);
+const defaultExclude = new Set(["Fragment", "React.Fragment"]);
 let exclude = defaultExclude;
 
 let isShowAwakeIdeMsg = true;
