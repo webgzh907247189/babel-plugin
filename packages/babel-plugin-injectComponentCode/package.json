@@ -1,0 +1,41 @@
+{
+  "name": "babel-plugin-injectcomponentcode",
+  "version": "1.0.0",
+  "description": "babel plugin react nextjs inject code",
+  "private": false,
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "inject",
+    "code",
+    "hoc",
+    "conmponent wrapper"
+  ],
+  "homepage": "https://github.com/webgzh907247189/babel-plugin/blob/master/packages/babel-plugin-injectcomponentcode/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webgzh907247189/babel-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webgzh907247189/babel-plugin/issues"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.21.4"
+  }
+}
