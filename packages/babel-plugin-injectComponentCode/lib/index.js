@@ -16,7 +16,6 @@ module.exports = function ({ types, template }, options) {
       : needWrapperFileRelativePath,
   );
 
-  debugger;
 
   return {
     inherits: pluginSyntaxJsx,
