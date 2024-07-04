@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-injectcomponentcode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "babel plugin react nextjs inject code",
   "private": false,
   "directories": {
@@ -35,7 +35,7 @@
   "scripts": {},
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.21.4"
   }
 }
