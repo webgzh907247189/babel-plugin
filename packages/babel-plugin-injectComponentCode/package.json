@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-injectcomponentcode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "babel plugin react nextjs inject code",
   "private": false,
   "directories": {
