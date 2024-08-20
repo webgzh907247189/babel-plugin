@@ -1,5 +1,11 @@
 # babel-plugin-injectcomponentcode
 
+## 2.0.0
+
+### Major Changes
+
+-   support glob pattern
+
 ## 1.0.3
 
 ### Patch Changes
