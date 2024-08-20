@@ -1,5 +1,11 @@
 # babel-plugin-injectcomponentcode
 
+## 2.0.2
+
+### Patch Changes
+
+-   fix bug for globIgnorePath
+
 ## 2.0.1
 
 ### Patch Changes

@@ -6,11 +6,13 @@ const { glob } = require("glob");
 // 使用 glob 模式 匹配文件
 // 内置 ignore node_modules
 module.exports = async function ({ types, template }, options) {
-	const ignorePathList = Array.isArray(options.globIgnorePath) ? ['node_modules/**', ...options.globIgnorePath] : options.globIgnorePath;
-	const globMachedFileList = await glob(options.globMatchPath , { ignore: ignorePathList})
 
-	const { importComponentFilePath, importComponentName, isImportDefault = true } = options ?? {};
-	const isUseGlob = options.globIgnorePath && options.globMatchPath
+	const { importComponentFilePath, importComponentName, isImportDefault = true, globMatchPath, globIgnorePath = [] } = options ?? {};
+
+	const ignorePathList = Array.isArray(globIgnorePath) ? ['node_modules/**', ...globIgnorePath] : globIgnorePath;
+	const globMachedFileList = await glob(globMatchPath , { ignore: ignorePathList})
+
+	const isUseGlob = globIgnorePath && globMatchPath
 
 	const optionsFileNameSet = new Set(isUseGlob ? globMachedFileList : defaultFileNameList);
 
