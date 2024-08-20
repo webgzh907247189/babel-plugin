@@ -6,7 +6,7 @@ const { glob } = require("glob");
 // 使用 glob 模式 匹配文件
 // 内置 ignore node_modules
 module.exports = async function ({ types, template }, options) {
-	const ignorePathList = Array.isArray(options.globIgnorePath) ? ['node_modules/**',, ...options.globIgnorePath] : options.globIgnorePath;
+	const ignorePathList = Array.isArray(options.globIgnorePath) ? ['node_modules/**', ...options.globIgnorePath] : options.globIgnorePath;
 	const globMachedFileList = await glob(options.globMatchPath , { ignore: ignorePathList})
 
 	const { importComponentFilePath, importComponentName, isImportDefault = true } = options ?? {};
@@ -85,7 +85,7 @@ module.exports = async function ({ types, template }, options) {
 								IMPORTFNPACKAGE: types.identifier(importComponentName),
 								OLDNOE: replaceOldVal,
 							});
-
+				
 							oldExportNode.replaceWith(newNode);
 						}
 					}
