@@ -36,6 +36,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/plugin-syntax-jsx": "^7.21.4"
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "glob": "^11.0.0"
   }
 }

@@ -1,11 +1,18 @@
 const pluginSyntaxJsx = require("@babel/plugin-syntax-jsx").default;
 
 const defaultFileNameList = ["/page.tsx", "/page.jsx"];
+const { glob } = require("glob");
 
-module.exports = function ({ types, template }, options) {
-	const { importComponentFilePath, importComponentName, isImportDefault = true, needWrapperFileRelativePath = [] } = options ?? {};
+// 使用 glob 模式 匹配文件
+// 内置 ignore node_modules
+module.exports = async function ({ types, template }, options) {
+	const ignorePathList = Array.isArray(options.globIgnorePath) ? ['node_modules/**',, ...options.globIgnorePath] : options.globIgnorePath;
+	const globMachedFileList = await glob(options.globMatchPath , { ignore: ignorePathList})
 
-	const optionsFileNameSet = new Set(needWrapperFileRelativePath ? [...defaultFileNameList, ...needWrapperFileRelativePath] : needWrapperFileRelativePath);
+	const { importComponentFilePath, importComponentName, isImportDefault = true } = options ?? {};
+	const isUseGlob = options.globIgnorePath && options.globMatchPath
+
+	const optionsFileNameSet = new Set(isUseGlob ? globMachedFileList : defaultFileNameList);
 
 	return {
 		inherits: pluginSyntaxJsx,
@@ -38,9 +45,10 @@ module.exports = function ({ types, template }, options) {
 						}
 
 						if (isImportAstNode) {
-							const importedPackageName = itembodyChildren.get("source").toString();
+							// const importedPackageName = itembodyChildren.get("source").toString();
+							const importedPackageName = itembodyChildren.get("source").node.value;	
 
-							if (importedPackageName === `'${importComponentFilePath}'`) {
+							if (importedPackageName === importComponentFilePath) {
 								const itemImportSpecifiersList = itembodyChildren.get("specifiers");
 
 								for (const itemImportSpecifier of itemImportSpecifiersList) {
