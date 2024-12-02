@@ -1,5 +1,11 @@
 # babel-plugin-injectcomponentcode
 
+## 3.0.0
+
+### Major Changes
+
+-   change visit to JSXOpeningElement
+
 ## 2.0.2
 
 ### Patch Changes
