@@ -19,7 +19,7 @@ module.exports = async function ({ types, template }, options) {
 	return {
 		inherits: pluginSyntaxJsx,
 		visitor: {
-			JSXElement(astPath, state) {
+			JSXOpeningElement(astPath, state) {
 				const filename = state.filename;
 				let matchFileFlag = false;
 				for (const iteratorFileName of optionsFileNameSet) {
