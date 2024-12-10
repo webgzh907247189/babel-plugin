@@ -6,13 +6,13 @@ const { glob } = require("glob");
 // 使用 glob 模式 匹配文件
 // 内置 ignore node_modules
 module.exports = async function ({ types, template }, options) {
-
+	
 	const { importComponentFilePath, importComponentName, isImportDefault = true, globMatchPath, globIgnorePath = [] } = options ?? {};
 
-	const ignorePathList = Array.isArray(globIgnorePath) ? ['node_modules/**', ...globIgnorePath] : globIgnorePath;
-	const globMachedFileList = await glob(globMatchPath , { ignore: ignorePathList})
+	const ignorePathList = Array.isArray(globIgnorePath) ? ["node_modules/**", ...globIgnorePath] : globIgnorePath;
+	const globMachedFileList = await glob(globMatchPath, { ignore: ignorePathList });
 
-	const isUseGlob = globIgnorePath && globMatchPath
+	const isUseGlob = globIgnorePath && globMatchPath;
 
 	const optionsFileNameSet = new Set(isUseGlob ? globMachedFileList : defaultFileNameList);
 
@@ -29,26 +29,37 @@ module.exports = async function ({ types, template }, options) {
 					}
 				}
 
+				let bodyAstPath;
 				if (matchFileFlag) {
 					let needBabelPluginImported = true;
 
 					const programAstPath = astPath.find((parentPath) => parentPath.isProgram());
-					let oldExportNodeVal = "";
-					let oldExportNode = "";
+					let oldExportNodeFnVal = "";
+					let oldExportNodeEmitExport = "";
+					let oldExportAstNode = "";
+					let isFnASt = false;
 
-					const bodyAstPath = programAstPath.get("body");
+					bodyAstPath = programAstPath.get("body");
 					for (const itembodyChildren of bodyAstPath) {
 						let isImportAstNode = types.isImportDeclaration(itembodyChildren);
 
 						let isExportAstNode = types.isExportDefaultDeclaration(itembodyChildren);
 						if (isExportAstNode) {
-							oldExportNodeVal = itembodyChildren.get("declaration").toString();
-							oldExportNode = itembodyChildren;
+							oldExportNodeEmitExport = itembodyChildren.get("declaration");
+
+							isFnASt = types.isFunctionDeclaration(oldExportNodeEmitExport);
+							if (isFnASt) {
+								oldExportNodeFnVal = itembodyChildren.get("declaration").get("id").toString();
+							} else {
+								oldExportNodeFnVal = itembodyChildren.get("declaration").toString();
+							}
+
+							oldExportAstNode = itembodyChildren;
 						}
 
 						if (isImportAstNode) {
 							// const importedPackageName = itembodyChildren.get("source").toString();
-							const importedPackageName = itembodyChildren.get("source").node.value;	
+							const importedPackageName = itembodyChildren.get("source").node.value;
 
 							if (importedPackageName === importComponentFilePath) {
 								const itemImportSpecifiersList = itembodyChildren.get("specifiers");
@@ -78,17 +89,21 @@ module.exports = async function ({ types, template }, options) {
 						programAstPath.unshiftContainer("body", [newImportNodeAst]);
 
 						// wrapper
-						if (oldExportNodeVal) {
+						if (oldExportNodeFnVal) {
 							const newExportNodeTemplateFn = template("export default IMPORTFNPACKAGE(OLDNOE)");
-
-							let replaceOldVal = oldExportNodeVal.replace(/\s*__source=\{{1}[^}]*\}}{1}\s*/g, "  ").replace(/\s*__self={this}\s*/g, "  ");
 
 							const newNode = newExportNodeTemplateFn({
 								IMPORTFNPACKAGE: types.identifier(importComponentName),
-								OLDNOE: replaceOldVal,
+								OLDNOE: oldExportNodeFnVal,
 							});
-				
-							oldExportNode.replaceWith(newNode);
+
+							programAstPath.pushContainer("body", [newNode]);
+
+							if (isFnASt) {
+								oldExportAstNode.replaceWith(oldExportNodeEmitExport);
+							} else {
+								oldExportAstNode.remove();
+							}
 						}
 					}
 				}
