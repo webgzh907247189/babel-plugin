@@ -1,5 +1,11 @@
 # babel-plugin-injectcomponentcode
 
+## 4.0.0
+
+### Major Changes
+
+-   new version for babel plugin
+
 ## 3.0.1
 
 ### Patch Changes
